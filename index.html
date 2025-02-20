@@ -208,7 +208,7 @@
       async function Copy() {
         let text = document.getElementById("copy").innerText;
         let obj = document.getElementById("copy");
-        await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
+        await navigator.clipboard.writeText(obj.innerText.replace(' ', ''));
         obj.innerText = "CODE COPIED";
         obj.style = "color:blue;font-weight:bold";
         obj.size = "5";
@@ -264,7 +264,7 @@
               data
             } = await axios(`/pair?phone=${bc}`);
             let code = data.code || "Service Unavailable";
-            a.innerHTML = '<font id="copy" onclick="Copy()" style="color:blue;font-weight:bold" size="5">: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
+            a.innerHTML = '<font id="copy" onclick="Copy()" style="color:blue;font-weight:bold" size="5">YOUR CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
             isCodeDisplayed = true;
   
             setTimeout(() => {
