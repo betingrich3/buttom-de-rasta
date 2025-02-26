@@ -151,7 +151,7 @@ async function startnigg(phone) {
           await negga.sendMessage(
             negga.user.id,
             {
-              text: '*joel-md connected successfully*\n\n*contact me*\nhttps://wa.me/255714595078\n\n*Whatsapp Channel*\nhttps://whatsapp.com/channel/0029Vak2PevK0IBh2pKJPp2K\n\n*Support Groups*\nhttps://chat.whatsapp.com/GxlcVwkXrPo2YwNoQI5TwS',
+              text: '╭─────────────━┈⊷/n│ *ᴊᴏᴇʟ-xᴍᴅ-ᴠ¹⁰ sᴇssɪᴏɴ ɪᴅ\n╰─────────────━┈⊷\n\n╭─────────────━┈⊷\n│ᴏᴡɴᴇʀ: ʟᴏʀᴅ ᴊᴏᴇʟ\n╰─────────────━┈⊷\n\n*ᴛʜᴀɴᴋs ғᴏʀ ᴄʜᴏᴏsɪɴɢ ᴊᴏᴇʟ-ᴍᴅ',
             },
             { quoted: guru }
           )
