@@ -67,11 +67,11 @@ function deleteSessionFolder() {
 }
 
 app.get('/', async (req, res) => {
-  res.sendFile(path.join(__dirname, 'qr.html'))
+  res.sendFile(path.join(__dirname, 'index.html'))
 })
 
 app.get('/qr', async (req, res) => {
-  res.sendFile(path.join(__dirname, 'q.html'))
+  res.sendFile(path.join(__dirname, 'qr.html'))
 })
 
 app.get('/code', async (req, res) => {
