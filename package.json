@@ -1,14 +1,14 @@
 {
-    "description": "baraka-session-scanner",
-    "main": "./gifted.js",
+    "description": "joel xmd-session-scanner",
+    "main": "./joel.js",
   "engines" : { 
     "npm" : ">=9.7.2",
     "node" : ">=20.0.0"
     },
     "scripts": {
-    "start": "node gifted.js"
+    "start": "node joel.js"
   },
-  "author": "Baraka Bega",
+  "author": "lord joel",
    "license": "",
    "dependencies": {
         "@hapi/boom": "^10.0.1",
