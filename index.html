@@ -20,44 +20,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
-      background: linear-gradient(to bottom, #a8dff0, #001f33);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
       margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-family: Arial, sans-serif;
       overflow: hidden;
-      color: white;
-      font-family: 'Graduate', sans-serif;
     }
-
-    @keyframes snow {
-      0% { transform: translateY(0px); opacity: 1; }
-      100% { transform: translateY(100vh); opacity: 0; }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-
-    .snowflake {
-      position: absolute;
-      top: -10px;
-      width: 10px;
-      height: 10px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: snow linear infinite;
-    }
-
-    .snowflake:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
-    .snowflake:nth-child(2) { left: 20%; animation-duration: 5s; animation-delay: 1s; }
-    .snowflake:nth-child(3) { left: 30%; animation-duration: 6s; animation-delay: 2s; }
-    .snowflake:nth-child(4) { left: 40%; animation-duration: 7s; animation-delay: 3s; }
-    .snowflake:nth-child(5) { left: 50%; animation-duration: 9s; animation-delay: 4s; }
-    .snowflake:nth-child(6) { left: 60%; animation-duration: 5s; animation-delay: 2s; }
-    .snowflake:nth-child(7) { left: 70%; animation-duration: 6s; animation-delay: 1s; }
-    .snowflake:nth-child(8) { left: 80%; animation-duration: 8s; animation-delay: 0s; }
-    .snowflake:nth-child(9) { left: 90%; animation-duration: 7s; animation-delay: 3s; }
-    .snowflake:nth-child(10) { left: 95%; animation-duration: 6s; animation-delay: 4s; }
-
     .container {
       text-align: center;
       background: rgba(0, 0, 0, 0.7);
@@ -66,27 +45,25 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       max-width: 400px;
       width: 100%;
+      position: relative;
     }
-
     h3 {
       margin-top: 0;
       opacity: 0;
       transform: translateY(-100px);
       animation: slideIn 2s ease-out forwards, fadeIn 2s ease-out forwards;
+      color: white;
     }
-
     @keyframes slideIn {
       to {
         transform: translateY(0);
       }
     }
-
     @keyframes fadeIn {
       to {
         opacity: 1;
       }
     }
-
     .input-container {
       display: flex;
       background: #ffffff;
@@ -97,7 +74,6 @@
       width: 100%;
       margin: 0 auto;
     }
-
     .input-container input {
       border-radius: 0.8rem 0 0 0.8rem;
       background: #000000;
@@ -109,13 +85,11 @@
       color: #ecf0f1;
       transition: all 0.2s ease-in-out;
     }
-
     .input-container input:focus {
       border-left: 2px solid #075e54;
       outline: none;
       box-shadow: inset 13px 13px 10px #075e54, inset -13px -13px 10px #2c3e50;
     }
-
     .input-container button {
       flex-basis: 25%;
       padding: 1rem;
@@ -129,26 +103,21 @@
       border-radius: 0 1rem 1rem 0;
       transition: all 0.2s ease-in-out;
     }
-
     .input-container button:hover {
       background: #2980b9;
     }
-
     #loading-spinner {
       display: none;
       color: white;
       margin-top: 10px;
     }
-
     .fa-spinner {
       animation: spin 2s linear infinite;
     }
-
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-
     footer {
       position: fixed;
       bottom: 0;
@@ -159,124 +128,159 @@
       text-align: center;
       font-size: 14px;
     }
+    .box {
+      width: 300px;
+      height: 330px;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      transform: perspective(1000px) rotateY(0deg);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      border: 2px solid transparent;
+      animation: neon-border 2s linear infinite;
+    }
+    @keyframes neon-border {
+      0% {
+        border-color: #ff0000;
+        box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000;
+      }
+      14% {
+        border-color: #ff7300;
+        box-shadow: 0 0 10px #ff7300, 0 0 20px #ff7300, 0 0 40px #ff7300;
+      }
+      28% {
+        border-color: #fffb00;
+        box-shadow: 0 0 10px #fffb00, 0 0 20px #fffb00, 0 0 40px #fffb00;
+      }
+      42% {
+        border-color: #48ff00;
+        box-shadow: 0 0 10px #48ff00, 0 0 20px #48ff00, 0 0 40px #48ff00;
+      }
+      57% {
+        border-color: #00ffd5;
+        box-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5, 0 0 40px #00ffd5;
+      }
+      71% {
+        border-color: #002bff;
+        box-shadow: 0 0 10px #002bff, 0 0 20px #002bff, 0 0 40px #002bff;
+      }
+      85% {
+        border-color: #7a00ff;
+        box-shadow: 0 0 10px #7a00ff, 0 0 20px #7a00ff, 0 0 40px #7a00ff;
+      }
+      100% {
+        border-color: #ff00c8;
+        box-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8, 0 0 40px #ff00c8;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Snowflakes -->
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
+  <video autoplay loop muted>
+    <source src="https://files.catbox.moe/uzvqg3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
   <div class="container">
-    <h3>JOEL XMD BOT PAIR SITE</h3>
-    <p>inter your phone number with country code.</p>
-    <div class="input-container">
-      <input placeholder="" type="number" id="number" name="">
-      <button id="submit">Code</button>
+    <div class="box">
+      <h3>DEMON DLAYER PAIR SITE</h3>
+      <p>Enter your phone number with country code.</p>
+      <div class="input-container">
+        <input placeholder="" type="number" id="number" name="">
+        <button id="submit">Code</button>
+      </div>
+      <div id="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+      <main id="pair"></main>
     </div>
-    <div id="loading-spinner">
-      <i class="fas fa-spinner fa-spin"></i>
-    </div>
-    
-  <footer>
-    JOEL XMD MADE BY LORD JOEL<span id=""></span>
-  </footer>
-    <br>
-    <main id="pair"></main>
-  </form>
   </div>
- </div>
- <link rel="import" href="./loader.html">
- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
-    ></script>
-    <script> 
-      let a = document.getElementById("pair");
-      let b = document.getElementById("submit");
-      let c = document.getElementById("number");
-  
-      let isSubmitting = false;
-      let isCodeDisplayed = false;
-  
-      async function Copy() {
-        let text = document.getElementById("copy").innerText;
-        let obj = document.getElementById("copy");
-        await navigator.clipboard.writeText(obj.innerText.replace(' ', ''));
-        obj.innerText = "CODE COPIED";
-        obj.style = "color:blue;font-weight:bold";
+
+  <footer>
+    Made By Marisel<span id=""></span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
+
+    let isSubmitting = false;
+    let isCodeDisplayed = false;
+
+    async function Copy() {
+      let text = document.getElementById("copy").innerText;
+      let obj = document.getElementById("copy");
+      await navigator.clipboard.writeText(obj.innerText.replace(' ', ''));
+      obj.innerText = "CODE COPIED";
+      obj.style = "color:blue;font-weight:bold";
+      obj.size = "5";
+      setTimeout(() => {
+        obj.innerText = text;
+        obj.style = "color:black;font-weight-bold";
         obj.size = "5";
-        setTimeout(() => {
-          obj.innerText = text;
-          obj.style = "color:black;font-weight-bold";
-          obj.size = "5";
-        }, 500);
+      }, 500);
+    }
+
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      if (isCodeDisplayed) {
+        alert("Please wait for 2 minutes before requesting a new code.");
+        return;
       }
-  
-      b.addEventListener("click", async (e) => {
-        e.preventDefault();
-  
-        if (isCodeDisplayed) {
-          alert("Please wait for 2 minutes before requesting a new code.");
-          return;
-        }
-  
-        if (isSubmitting) {
-          alert("Please wait for the code before trying to request again.");
-          return;
-        }
-  
-        if (!c.value) {
-          a.innerHTML = '<a style="color:red;font-weight:bold">Enter your WhatsApp number with a country code</a><br><br>';
-        } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
-          a.innerHTML = '<a style="color:red;font-weight:bold">Invalid number format</a><br><br>';
-        } else {
-          isSubmitting = true;
-  
-          const bc = c.value.replace(/[^0-9]/g, "");
-          let bb = "";
-          let bbc = "";
-          const cc = bc.split('');
-          cc.map(a => {
-            bbc += a;
-            if (bbc.length == 3) {
-              bb += " " + a;
-            } else if (bbc.length == 8) {
-              bb += " " + a;
-            } else {
-              bb += a;
-            }
-          });
-  
-          c.type = "text";
-          c.value = "+" + bb;
-          c.style = "color:black;font-size:22px";
-          a.innerHTML = '<a style="color:purple;font-size:22px;font-weight:bold">Generating Code...</a><br><br>';
-  
-          try {
-            let {
-              data
-            } = await axios(`/pair?phone=${bc}`);
-            let code = data.code || "Service Unavailable";
-            a.innerHTML = '<font id="copy" onclick="Copy()" style="color:blue;font-weight:bold" size="5">YOUR CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
-            isCodeDisplayed = true;
-  
-            setTimeout(() => {
-              isCodeDisplayed = false;
-            }, 120000); 
-          } catch (error) {
-            
-          } finally {
-            isSubmitting = false;
+
+      if (isSubmitting) {
+        alert("Please wait for the code before trying to request again.");
+        return;
+      }
+
+      if (!c.value) {
+        a.innerHTML = '<a style="color:red;font-weight:bold">Enter your WhatsApp number with a country code</a><br><br>';
+      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<a style="color:red;font-weight:bold">Invalid number format</a><br><br>';
+      } else {
+        isSubmitting = true;
+
+        const bc = c.value.replace(/[^0-9]/g, "");
+        let bb = "";
+        let bbc = "";
+        const cc = bc.split('');
+        cc.map(a => {
+          bbc += a;
+          if (bbc.length == 3) {
+            bb += " " + a;
+          } else if (bbc.length == 8) {
+            bb += " " + a;
+          } else {
+            bb += a;
           }
+        });
+
+        c.type = "text";
+        c.value = "+" + bb;
+        c.style = "color:black;font-size:22px";
+        a.innerHTML = '<a style="color:purple;font-size:22px;font-weight:bold">Generating Code...</a><br><br>';
+
+        try {
+          let { data } = await axios(`/pair?phone=${bc}`);
+          let code = data.code || "Service Unavailable";
+          a.innerHTML = '<font id="copy" onclick="Copy()" style="color:blue;font-weight:bold" size="5">YOUR CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
+          isCodeDisplayed = true;
+
+          setTimeout(() => {
+            isCodeDisplayed = false;
+          }, 120000); 
+        } catch (error) {
+          // Handle error
+        } finally {
+          isSubmitting = false;
         }
-      });
-    </script>
+      }
+    });
+  </script>
 </body>
 </html>
